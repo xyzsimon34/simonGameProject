@@ -1,0 +1,96 @@
+body {
+  text-align: center;
+  background-color: #121212; /* 深色背景 */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#level-title {
+  font-size: 3rem;
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%; 
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 1;
+  margin: 20px; 
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2); 
+  transition: box-shadow 0.3s ease;
+}
+
+.btn:hover:before {
+  box-shadow: 0 0 60px rgba(255, 255, 255, 0.8); 
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.green {
+  background-color: #00FF00;
+}
+
+.red {
+  background-color: #FF0033;
+}
+
+.yellow {
+  background-color: #FFFF00;
+}
+
+.blue {
+  background-color: #0099FF;
+}
+
+.pressed {
+  filter: brightness(85%);
+}
+
+@media (max-width: 768px) {
+  .btn {
+    height: 120px;
+    width: 120px;
+  }
+  
+  #level-title {
+    font-size: 2rem;
+  }
+}
+
+.game-over {
+  background-color: red; /* 可以根據需求更改顏色 */
+  transition: background-color 0.2s; /* 平滑過渡效果 */
+}
